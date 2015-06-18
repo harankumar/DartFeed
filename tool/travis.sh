@@ -6,5 +6,10 @@ dartanalyzer --fatal-warnings \
   lib/*.dart \
   test/*.dart
 
+# Run Test
+
 cd test
 dart DartFeed_test.dart
+
+pub global activate dart_coveralls
+dart_coveralls report DartFeed_test.dart
