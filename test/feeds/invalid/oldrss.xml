@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="1.0">
+    <channel>
+        <title>My Title</title>
+        <link>http://www.example.com</link>
+        <description>My Feed</description>
+        <language>en-us</language>
+        <image>
+            <url>http://www.example.com/img.gif</url>
+            <title>My Title</title>
+            <link>http://www.example.com</link>
+        </image>
+        <item>
+            <title>My Title</title>
+            <link>http://www.example.com/mystory.html</link>
+        </item>
+    </channel>
+</rss>

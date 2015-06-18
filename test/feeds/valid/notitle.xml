@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+    <channel>
+        <title>My RSS Feed</title>
+        <link>http://www.example.com</link>
+        <description>This RSS feed includes all the required and optional elements of the RSS 2.0 Specification. You may find it useful for testing purposes.</description>
+        <language>en-us</language>
+        <copyright>No copyright, because information wants to be free.</copyright>
+        <managingEditor>zaphod@example.com (Zaphod Beeblebrox)</managingEditor>
+        <webMaster>hans@example.com (Hans Solo)</webMaster>
+        <pubDate>Sat, 07 Sep 2002 00:00:01 GMT</pubDate>
+        <lastBuildDate>Sat, 07 Sep 2002 09:42:31 GMT</lastBuildDate>
+        <category domain="http://www.example.com/examples">Examples</category>
+        <category>Cool Examples</category>
+        <generator>Galactic CMS 1.7</generator>
+        <docs>http://www.rssboard.org/rss-specification</docs>
+        <cloud domain="sys.example.com" port="79" path="/RSS" registerProcedure="example.rssNotify" />
+        <ttl>75</ttl>
+        <rating>This is incorrect, but rarely used anyway. If you need this feature properly implemented, please let me know or make a pull request.</rating>
+        <image>
+            <url>http://rss.example.com/img.png</url>
+            <title>My RSS Feed</title>
+            <link>http://www.example.com/img.gif</link>
+            <width>144</width>
+            <height>400</height>
+            <description>Description here</description>
+        </image>
+        <textInput>
+            <title>Submit</title>
+            <description>Rarely used RSS Element</description>
+            <name>Name</name>
+            <link>http://www.example.com/clickbait.php</link>
+        </textInput>
+        <skipHours>
+            <hour>0</hour>
+            <hour>1</hour>
+            <hour>4</hour>
+            <hour>22</hour>
+        </skipHours>
+        <skipDays>
+            <day>Monday</day>
+        </skipDays>
+        <item>
+            <title>My Story</title>
+            <link>http://www.example.com/article.html</link>
+            <description>A cool story. Click the link!</description>
+            <guid isPermaLink="true">http://www.example.com/item12234</guid>
+        </item>
+        <item>
+            <title></title>
+            <link>http://www.example.com/cool.html</link>
+            <description>Title is optional if there's a description.</description>
+            <author>jlp@example.com (Jean-Luc Picard)</author>
+            <category>Cool Stories</category>
+            <category domain="http://www.example.com/cool.html">Cool Stuff</category>
+            <comments>http://www.example.com/comments.php</comments>
+            <enclosure url="http://www.example.com/mp3.mp3" length="1222121212" type="audio/mpeg"/>
+            <guid>Th!$ C@n Be @NYTH1NG!</guid>
+            <pubDate>07 Aug 2012 00:23:01 GMT</pubDate>
+            <source url="http://www.example.com/other.xml">Another Cool Feed</source>
+        </item>
+        <item>
+            <title>Title</title>
+            <link>http://www.link.link</link>
+            <description>Description</description>
+            <guid isPermaLink="false">Guid</guid>
+        </item>
+    </channel>
+</rss>
