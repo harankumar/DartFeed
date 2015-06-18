@@ -1,8 +1,9 @@
 name: DartFeed
-description: A starting point for Dart libraries or applications.
-version: 0.0.10
+description: A simple RSS 2.0 feed reader library.
+version: 0.0.1
 author: Haran Kumar <hkumar8200@gmail.com>
-description: Simple RSS feed reader library.
+homepage: https://github.com/harankumar/DartFeed
+documentation:
 environment:
   sdk: '>=1.0.0 <2.0.0'
 dependencies:
