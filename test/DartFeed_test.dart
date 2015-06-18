@@ -6,7 +6,7 @@ library DartFeed.test;
 import 'dart:io';
 
 import 'package:test/test.dart';
-import 'package:DartFeed/DartFeed.dart';
+import 'package:DartFeed/dart_feed.dart';
 
 String completeFeed = "feeds/valid/completefeed.xml";
 
