@@ -12,4 +12,4 @@ cd test
 dart DartFeed_test.dart
 
 pub global activate dart_coveralls
-dart_coveralls report DartFeed_test.dart
+dart_coveralls report --token=$coveralls_token DartFeed_test.dart
