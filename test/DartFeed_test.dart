@@ -8,7 +8,7 @@ import 'dart:io';
 import 'package:test/test.dart';
 import '../lib/dart_feed.dart';
 
-String completeFeed = "test/valid/completefeed.xml";
+String completeFeed = "feeds/valid/completefeed.xml";
 
 void main() {
   testConstructors();
@@ -23,9 +23,9 @@ List<String> webFeeds = [
 ];
 
 List<String> localFeeds = [
-  "test/valid/validfeed.xml",
-  "test/valid/completefeed.xml",
-  "test/valid/notitle.xml"
+  "feeds/valid/validfeed.xml",
+  "feeds/valid/completefeed.xml",
+  "feeds/valid/notitle.xml"
 ];
 
 String stringFeed = """<?xml version="1.0" encoding="utf-8"?>
@@ -227,21 +227,21 @@ void testCompleteFeed() {
 }
 
 List<String> badFeeds = [
-  "test/invalid/oldrss.xml",
-  "test/invalid/missingversion.xml",
-  "test/invalid/missingtitle.xml",
-  "test/invalid/missingdescription.xml",
-  "test/invalid/badimage1.xml",
-  "test/invalid/badimage2.xml",
-  "test/invalid/badimage3.xml",
-  "test/invalid/badimage4.xml",
-  "test/invalid/badimage5.xml",
-  "test/invalid/badimage6.xml",
-  "test/invalid/badimage7.xml",
-  "test/invalid/badimage8.xml",
-  "test/invalid/badimage9.xml",
-  "test/invalid/badimage10.xml",
-  "test/invalid/baditem.xml"
+  "feeds/invalid/oldrss.xml",
+  "feeds/invalid/missingversion.xml",
+  "feeds/invalid/missingtitle.xml",
+  "feeds/invalid/missingdescription.xml",
+  "feeds/invalid/badimage1.xml",
+  "feeds/invalid/badimage2.xml",
+  "feeds/invalid/badimage3.xml",
+  "feeds/invalid/badimage4.xml",
+  "feeds/invalid/badimage5.xml",
+  "feeds/invalid/badimage6.xml",
+  "feeds/invalid/badimage7.xml",
+  "feeds/invalid/badimage8.xml",
+  "feeds/invalid/badimage9.xml",
+  "feeds/invalid/badimage10.xml",
+  "feeds/invalid/baditem.xml"
 ];
 
 void testExceptionHandling() {

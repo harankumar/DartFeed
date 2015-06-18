@@ -6,4 +6,5 @@ dartanalyzer --fatal-warnings \
   lib/*.dart \
   test/*.dart
 
-dart test/DartFeed_test.dart
+cd test
+dart DartFeed_test.dart
