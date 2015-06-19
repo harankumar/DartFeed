@@ -6,7 +6,7 @@ library DartFeed.example;
 import 'dart:io';
 
 import 'package:http/http.dart';
-import 'package:DartFeed/DartFeed.dart';
+import 'package:dart_feed/dart_feed.dart';
 
 var webFeeds = [
   "http://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml",
