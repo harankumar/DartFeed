@@ -11,6 +11,6 @@ class Category {
     if (element == null) return;
     name = element.text;
     String domainUri = element.getAttribute("domain");
-    if (domainUri != null) domain = Uri.parse(domainUri);
+    if (domainUri != null) domain = Uri.parse(_escape(domainUri));
   }
 }

@@ -18,7 +18,7 @@ class Image {
       stream.addError(
           "Received a feed image without a url or valid image element");
       this.url = null;
-    } else this.url = Uri.parse(url.first.text);
+    } else this.url = Uri.parse(_escape(url.first.text));
     var title = element.findElements("title");
     if (title == null || title.length == 0 || title.first.text == "") {
       stream.addError(
@@ -30,7 +30,7 @@ class Image {
       stream.addError(
           "Received a feed image without a link or valid link element");
       this.link = null;
-    } else this.link = Uri.parse(link.first.text);
+    } else this.link = Uri.parse(_escape(link.first.text));
     width = int.parse(_getValue("width", element, "88"));
     if (width <= 0 || width > 144) {
       stream.addError(

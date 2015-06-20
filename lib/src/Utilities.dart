@@ -21,6 +21,11 @@ String _getValue(String name, XmlElement element, [String value = ""]) {
   }
 }
 
+String _escape(String url){
+  return url.replaceAll("[", "%5B")
+            .replaceAll("]", "%5D");
+}
+
 final _months = [
   "Jan",
   "Feb",

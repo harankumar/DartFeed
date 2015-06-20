@@ -24,12 +24,12 @@ class Item {
       title = "No Title";
       description = "No Description";
     }
-    link = Uri.parse(_getValue("link", element));
+    link = Uri.parse(_escape(_getValue("link", element)));
     author = _getValue("author", element);
     categories = new List<Category>();
     for (var category in element.findAllElements("category")) categories
         .add(new Category.fromXml(category));
-    comments = Uri.parse(_getValue("comments", element));
+    comments = Uri.parse(_escape(_getValue("comments", element)));
     enclosure = new Enclosure.fromXml(_get("enclosure", element));
     guid = new Guid.fromXml(_get("guid", element));
     pubDate = _parseDate(_getValue("pubDate", element));

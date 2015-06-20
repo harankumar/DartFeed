@@ -21,7 +21,8 @@ List<String> webFeeds = [
   "http://www.rssboard.org/files/sample-rss-2.xml",
   "http://www.reddit.com/r/news.rss",
   "http://www.reddit.com/search.rss?q=my+query",
-  "https://news.google.com/news?pz=1&cf=all&ned=us&hl=en&q=dart+language&output=rss"
+  "https://news.google.com/news?pz=1&cf=all&ned=us&hl=en&q=dart+language&output=rss",
+  "https://kat.cr/tv/?rss=1"
 ];
 
 List<String> localFeeds = [

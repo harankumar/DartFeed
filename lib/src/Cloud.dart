@@ -12,7 +12,7 @@ class Cloud {
 
   Cloud.fromXml(XmlElement element) {
     if (element == null) return;
-    domain = Uri.parse(element.getAttribute("domain"));
+    domain = Uri.parse(_escape(element.getAttribute("domain")));
     port = int.parse(element.getAttribute("port"));
     path = element.getAttribute("path");
     registerProcedure = element.getAttribute("registerProcedure");

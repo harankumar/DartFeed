@@ -9,7 +9,7 @@ class Source {
 
   Source.fromXml(XmlElement element) {
     if (element == null) return;
-    url = Uri.parse(element.getAttribute("url"));
+    url = Uri.parse(_escape(element.getAttribute("url")));
     name = element.text;
   }
 }

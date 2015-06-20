@@ -42,7 +42,7 @@ class FeedParser {
           .addError("Received a feed without a title or valid title element.");
       feed.title = "No Title";
     } else feed.title = title.first.text;
-    feed.link = Uri.parse(channel.findElements("link").first.text);
+    feed.link = Uri.parse(_escape(channel.findElements("link").first.text));
     var description = channel.findElements("description");
     if (description == null || description.length == 0) {
       _stream.addError(
@@ -59,7 +59,7 @@ class FeedParser {
     for (var category in channel.findElements("category")) feed.categories
         .add(new Category.fromXml(category));
     feed.generator = _getValue("generator", channel);
-    feed.docs = Uri.parse(_getValue("docs", channel));
+    feed.docs = Uri.parse(_escape(_getValue("docs", channel)));
     feed.cloud = new Cloud.fromXml(_get("cloud", channel));
     feed.ttl = int.parse("0" + _getValue("ttl", channel));
     feed.image = new Image.fromXml(_get("image", channel), _stream);

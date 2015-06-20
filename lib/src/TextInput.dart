@@ -14,6 +14,6 @@ class TextInput {
     title = element.findElements("title").first.text;
     description = element.findElements("description").first.text;
     name = element.findElements("name").first.text;
-    link = Uri.parse(element.findElements("link").first.text);
+    link = Uri.parse(_escape(element.findElements("link").first.text));
   }
 }

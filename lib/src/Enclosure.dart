@@ -10,7 +10,7 @@ class Enclosure {
 
   Enclosure.fromXml(XmlElement element) {
     if (element == null) return;
-    url = Uri.parse(element.getAttribute("url"));
+    url = Uri.parse(_escape(element.getAttribute("url")));
     length = int.parse(element.getAttribute("length"));
     type = element.getAttribute("type");
   }
