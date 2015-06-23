@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.3
+
+- Remove dart:io dependency
+
 ## 0.0.2
 
 - Bug Fix for brackets in urls

@@ -109,19 +109,6 @@ void testConstructors() {
     }
   });
 
-  test("FeedParser.fromFile Constructor", () async {
-    for (String feed in localFeeds) {
-      File file = new File(feed);
-      FeedParser feedParser = new FeedParser()
-        ..stream.listen(testFeed)
-        ..stream.listen(testRequiredFeedElements)
-        ..stream.listen(onComplete, onError: onError);
-      await feedParser.fromFile(file);
-      expect(feedParser, isNotNull,
-          reason: "FeedParser.fromFile constructor produces a valid object.");
-    }
-  });
-
   test("FeedParser.fromString Constructor", () async {
     FeedParser feedParser = new FeedParser()
       ..stream.listen(testFeed)
@@ -225,7 +212,7 @@ void testCompleteFeed() {
         testFeed(feed);
       })
       ..stream.listen(onComplete, onError: onError);
-    await feedParser.fromFile(file);
+    await feedParser.fromString(file.readAsStringSync());
   });
 }
 
@@ -258,8 +245,8 @@ void testExceptionHandling() {
         e = true;
       });
     for (var feed in badFeeds) {
-      var f = new File(feed);
-      await feedParser.fromFile(f);
+      var f = new File(feed).readAsStringSync();
+      await feedParser.fromString(f);
     }
   });
 }

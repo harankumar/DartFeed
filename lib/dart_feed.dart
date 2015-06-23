@@ -6,7 +6,6 @@
 /// This is an awesome library. More dartdocs go here.
 library DartFeed;
 
-import 'dart:io';
 import 'dart:async';
 
 import 'package:http/http.dart' as http;

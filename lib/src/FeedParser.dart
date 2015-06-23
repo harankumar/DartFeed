@@ -16,10 +16,6 @@ class FeedParser {
     });
   }
 
-  void fromFile(File file) {
-    return fromString(file.readAsStringSync());
-  }
-
   void fromString(String rssString) {
     var xmlDocument = parse(rssString);
     return fromXml(xmlDocument);
