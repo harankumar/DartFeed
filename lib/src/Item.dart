@@ -15,12 +15,13 @@ class Item {
   DateTime pubDate;
   Source source;
 
-  Item.fromXml(XmlElement element, [StreamController stream]) {
+  Item.fromXml(XmlElement element) {
     title = _getValue("title", element);
     description = _getValue("description", element);
-    if ((title == null || title == "") && (description == null || description == "")) {
-      stream
-          .addError("Received a feed item with no valid title or description.");
+    if ((title == null || title == "") &&
+        (description == null || description == "")) {
+      throw new Exception(
+          "Received a feed item with no valid title or description.");
       title = "No Title";
       description = "No Description";
     }

@@ -1,6 +1,6 @@
 name: dart_feed
 description: A simple RSS 2.0 feed reader library.
-version: 0.0.3
+version: 0.0.4
 author: Haran Kumar <hkumar8200@gmail.com>
 homepage: https://github.com/harankumar/DartFeed
 documentation:

@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.4
+
+- Refactor Future API
+
 ## 0.0.3
 
 - Remove dart:io dependency

@@ -63,17 +63,6 @@ String stringFeed = """<?xml version="1.0" encoding="utf-8"?>
 """;
 
 void testConstructors() {
-  bool error = false;
-
-  void onError(e) {
-    error = true;
-  }
-
-  void onComplete(Feed feed) {
-    expect(error, isFalse);
-    error = false;
-  }
-
   void testFeed(Feed feed) {
     expect(feed, isNotNull, reason: "FeedParser.onLoad produces a Feed Object");
   }
@@ -99,39 +88,20 @@ void testConstructors() {
   test("FeedParser.fromUri Constructor", () async {
     for (String feed in webFeeds) {
       Uri uri = Uri.parse(feed);
-      FeedParser feedParser = new FeedParser()
-        ..stream.listen(testFeed)
-        ..stream.listen(testRequiredFeedElements)
-        ..stream.listen(onComplete, onError: onError);
-      await feedParser.fromUri(uri);
-      expect(feedParser, isNotNull,
-          reason: "FeedParser.fromUri constructor produces a valid object.");
+      Feed x = await Feed.fromUri(uri);
+      testFeed(x);
+      testRequiredFeedElements(x);
     }
   });
 
   test("FeedParser.fromString Constructor", () async {
-    FeedParser feedParser = new FeedParser()
-      ..stream.listen(testFeed)
-      ..stream.listen(testRequiredFeedElements)
-      ..stream.listen(onComplete, onError: onError);
-    await feedParser.fromString(stringFeed);
-    expect(feedParser, isNotNull,
-        reason: "FeedParser.fromString constructor produces a valid object.");
+    Feed x = await Feed.fromString(stringFeed);
+    testFeed(x);
+    testRequiredFeedElements(x);
   });
 }
 
 void testCompleteFeed() {
-  bool error = false;
-
-  void onError(e) {
-    error = true;
-  }
-
-  void onComplete(Feed feed) {
-    expect(error, isFalse);
-    error = false;
-  }
-
   void testFeed(Feed feed) {
     expect(feed, isNotNull);
     expect(feed.version, equals("2.0"));
@@ -207,12 +177,7 @@ void testCompleteFeed() {
 
   test("Test of Complete Feed", () async {
     File file = new File(completeFeed);
-    FeedParser feedParser = new FeedParser()
-      ..stream.listen((Feed feed) {
-        testFeed(feed);
-      })
-      ..stream.listen(onComplete, onError: onError);
-    await feedParser.fromString(file.readAsStringSync());
+    Feed.fromString(await file.readAsString()).then(testFeed);
   });
 }
 
@@ -236,17 +201,18 @@ List<String> badFeeds = [
 
 void testExceptionHandling() {
   test("Malformed Feed Sends Exception to Stream", () async {
-    bool e;
-    var feedParser = new FeedParser()
-      ..stream.listen((_) {
+    bool e = false;
+
+    for (var feed in badFeeds) {
+      try {
+        var f = new File(feed).readAsStringSync();
+        await Feed.fromString(f);
+      } catch (ex) {
+        e = true;
+      } finally {
         expect(e, isTrue);
         e = false;
-      }, onError: (_) {
-        e = true;
-      });
-    for (var feed in badFeeds) {
-      var f = new File(feed).readAsStringSync();
-      await feedParser.fromString(f);
+      }
     }
   });
 }

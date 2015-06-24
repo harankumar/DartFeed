@@ -23,4 +23,3 @@ part 'src/Cloud.dart';
 part 'src/Image.dart';
 part 'src/TextInput.dart';
 part 'src/Feed.dart';
-part 'src/FeedParser.dart';

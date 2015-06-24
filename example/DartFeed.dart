@@ -15,11 +15,9 @@ var webFeeds = [
 ];
 
 main() {
-  FeedParser parser = new FeedParser();
-  parser.stream.listen(printFeed);
-  parser.fromString(new File("feed.xml").readAsStringSync());
+  Feed.fromString(new File("feed.xml").readAsStringSync()).then(printFeed);
   for (var feed in webFeeds) {
-    parser.fromUri(Uri.parse(feed));
+    Feed.fromUri(Uri.parse(feed)).then(printFeed);
   }
 }
 
