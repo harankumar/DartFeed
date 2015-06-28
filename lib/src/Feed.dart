@@ -29,7 +29,7 @@ class Feed {
   Feed();
 
   static Future<Feed> fromUri(Uri uri) async {
-    return fromString(await html.HttpRequest.getString(uri.toString()));
+    return fromString(await http.read(uri));
   }
 
   static Future<Feed> fromString(String rssString) {
